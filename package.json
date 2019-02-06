@@ -1,0 +1,11 @@
+{
+  "name": "helloworld",
+  "main": "index.html",
+  "version": "1.0.0",
+  "description": "Node web kit - Hello World",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ishank",
+  "license": "ISC"
+}
