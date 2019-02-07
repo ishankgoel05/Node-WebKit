@@ -1,9 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>First Node JS App!</title>
-  </head>
-  <body>
+    <script type="text/javascript">
+        // Menu Logic for JS App
+
+        /* 
+            For menu building use - nw.gui Module
+            It holds the node webkit GUI module
+        */
+
+        var gui = require('nw.gui');
+        
+        //Get the window object
+        var win = gui.Window.get();
+
+        // menu() -> to create empty menu
+        var menubar = new gui.Menu({
+            type : 'menubar'
+        })
+
+        //  Menuitem -> adding sub-menu 
+        var menu1 = new gui.Menu();
+        menu1.append(new gui.MenuItem({
+            label : 'Menu1 - Item1',
+            click : function(){
+                alert('Menu 1.1 Clicked');
+            }
+        }));
+
+        menu1.append(new gui.MenuItem({
+            label : 'Menu1 - Item 2',
+            click : function(){
+                alert('Menu 1.2 Clicked');
+            }
+        }));
+
+        menubar.append(new gui.MenuItem({
+            label: 'Menu1',
+            submenu : menu1
+        }));
+
+        win.menu = menubar;
+
+
+
+    </script>
+</head>
+
+<body>
     <h1>Hello World!</h1>
-  </body>
+</body>
+
 </html>
